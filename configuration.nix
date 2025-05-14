@@ -72,10 +72,8 @@
      git
      wget
      hyprland
-     kitty
      waybar
      rofi
-     firefox
   ];
 
   programs.hyprland.enable = true;
