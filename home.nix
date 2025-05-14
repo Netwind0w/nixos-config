@@ -14,6 +14,9 @@
     firefox
     neovim
     kitty
+    waybar
+    rofi
+    vim
   ];
 
 }
