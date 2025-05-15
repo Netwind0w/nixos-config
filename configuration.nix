@@ -15,6 +15,9 @@
   boot.loader.grub.device = "/dev/nvme0n1";
   boot.loader.grub.useOSProber = true;
 
+  services.blueman.enable = true;
+  hardware.bluetooth.enable = true;
+
   networking.hostName = "netwindow"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
