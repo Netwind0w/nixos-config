@@ -18,7 +18,24 @@
     vim
     nerd-fonts.droid-sans-mono
     nerd-fonts.fira-code
+    bibata-cursors
+    spotify
+    spicetify-cli
   ];
+
+  xresources.properties = {
+    "Xcursor.theme" = "Bibata-Modern-Ice";
+    "Xcursor.size" = 24;
+  };
+ 
+  gtk = {
+    enable = true;
+    cursorTheme = {
+      name = "Bibata-Modern-Ice";
+      package = pkgs.bibata-cursors;
+      size = 24;
+    };
+  };
 
   fonts.fontconfig.enable = true;
 }
