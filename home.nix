@@ -19,4 +19,6 @@
     vim
   ];
 
+  programs.waybar.enable = true;
+
 }

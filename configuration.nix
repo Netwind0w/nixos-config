@@ -76,7 +76,9 @@
   programs.hyprland.enable = true;
 
   services.xserver.enable = true;
-  services.xserver.displayManager.startx.enable = true;
+  services.displayManager.sddm.enable = true;
+
+  services.displayManager.defaultSession = "hyprland";
 
   security.sudo.enable = true;
 

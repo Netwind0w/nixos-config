@@ -12,17 +12,31 @@
   };
 
 
-  outputs = { self, nixpkgs, hyprland, home-manager,  ...}: {
+  outputs = inputs@{ self, nixpkgs, hyprland, home-manager,  ...}: {
     nixosConfigurations.netwindow = nixpkgs.lib.nixosSystem {
-      system = "86_64-linux";
+      system = "x86_64-linux";
       modules = [
         ./configuration.nix
         hyprland.nixosModules.default
-
         home-manager.nixosModules.home-manager {
+          home-manager.useGlobalPkgs = true;
+          home-manager.useUserPackages = true;
           home-manager.users.netwindow = import ./home.nix;
         }
       ];
+    };
+    
+    homeConfigurations = {
+      netwindow = home-manager.lib.homeManagerConfiguration {
+        pkgs = import nixpkgs {
+          system = "x86_64-linux";
+          config.allowUnfree = true;
+        };
+        extraSpecialArgs = { inherit inputs; };
+        modules = [
+          ./home.nix
+        ];
+      };
     };
   };
 }
