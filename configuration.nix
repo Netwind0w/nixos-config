@@ -17,6 +17,8 @@
 
   services.blueman.enable = true;
   hardware.bluetooth.enable = true;
+  
+  programs.zsh.enable = true; 
 
   networking.hostName = "netwindow"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
@@ -53,12 +55,13 @@
     layout = "us";
     variant = "";
   };
-
+  
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.netwindow = {
     isNormalUser = true;
     description = "Netwindow";
     extraGroups = [ "networkmanager" "wheel" "video" ];
+    shell = pkgs.zsh;
     packages = with pkgs; [];
   };
 
@@ -80,7 +83,6 @@
 
   services.xserver.enable = true;
   services.displayManager.sddm.enable = true;
-
   services.displayManager.defaultSession = "hyprland";
 
   security.sudo.enable = true;

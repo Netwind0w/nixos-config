@@ -3,7 +3,17 @@
   home.username = "netwindow";
   home.homeDirectory = "/home/netwindow";
 
-  programs.zsh.enable = true;
+  programs.zsh = {
+    enable = true;
+    enableCompletion = true;
+    autosuggestion.enable = true;
+    syntaxHighlighting.enable = true;
+    oh-my-zsh = {
+      enable = true;
+      plugins = [ "git" "z" "sudo" "history" ];
+    };
+  };
+
   programs.git.enable = true;
   programs.waybar.enable = true;
 
@@ -12,7 +22,7 @@
   home.packages = with pkgs; [
     firefox
     neovim
-    kitty
+    ghostty
     waybar
     rofi
     vim
@@ -21,6 +31,10 @@
     bibata-cursors
     spotify
     spicetify-cli
+    nemo
+    yazi
+    zsh
+    oh-my-zsh
   ];
 
   xresources.properties = {
