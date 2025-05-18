@@ -1,4 +1,3 @@
-
 { config, pkgs, lib, ... }:
 
 
@@ -6,6 +5,9 @@
   home.username = "netwindow";
   home.homeDirectory = "/home/netwindow";
 
+  home.packages = with pkgs; [
+    blueman
+  ];
 
   programs.home-manager.enable = true;
 

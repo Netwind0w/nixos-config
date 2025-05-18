@@ -1,0 +1,28 @@
+* {
+  border: none;
+  font-family: "Maple Mono", "JetBrains Mono", monospace;
+  font-size: 13px;
+  min-height: 0;
+}
+
+window#waybar {
+  background: #1d2021;
+  color: #ebdbb2;
+}
+
+#workspaces button {
+  padding: 0 5px;
+  color: #a89984;
+}
+
+#workspaces button.focused {
+  background: #458588;
+  color: #ffffff;
+}
+
+#clock,
+#pulseaudio,
+#network,
+#tray {
+  padding: 0 10px;
+}
